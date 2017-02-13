@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tang Homepage</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="求职, web前端开发工程师" />
+	<script type="application/x-javascript">
+		addEventListener("load", function() {
+			setTimeout(hideURLbar, 0); 
+		}, false);
+
+		function hideURLbar(){
+				window.scrollTo(0,1);
+		}
+	</script>
+	<link rel="stylesheet" href="css/base.css"/>
+	<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<link href="css/style.css" rel='stylesheet' type='text/css' />
+	<link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
+
+	<script src="js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
+	<script src="js/wow.min.js"></script>
+
+	<link rel="shortcut icon" href="images/icon.ico" type="image/x-icon"/>
+	<!-- 设置点击到达目标位置-->
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+		new WOW().init();
+	</script>
+</head>
+<body>
+	<!-- 头部-->
+	<div class="banner" id="home">
+		<!-- 头部导航-->
+		<div class="header">
+			<div class="logo">
+				<a href="index.html"><span class="glyphicon glyphicon-home"> Web前端</span></a>
+			</div>
+			<div class="navigation">
+				<span class="menu"></span>
+				<ul class="navig">
+					<li><a href="index.html" class="scroll">主页</a></li>
+					<li><a href="#portfolio" class="scroll">项目展示</a></li>
+					<li><a href="#contact" class="scroll">关于我</a></li>
+				</ul>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<!-- 轮播图-->
+		<div  id="top" class="callbacks_container">
+		     <ul class="rslides" id="slider4">
+				 <li><div class="banner-1"></div></li>
+				 <li><div class="banner-2"></div></li>
+				 <li><div class="banner-3"></div></li>
+		     </ul>
+			<div class="text" title="TEL: 134 2917 6706">
+				<ul>
+					<li><p>Write Code In</p></li>
+					<li id="animat"><p><span> HTML </span><span> CSS </span><span> javascript </span><span>and more...</span></p></li>
+					<li><p><span>唐 齐</span><span>Web前端开发</span></p></li>
+					<li class="dis"><p>...............................</p></li>
+					<li class="dis"><p>已知: 我会coding</p></li>
+					<li class="dis"><p>求证: 你找那一个</p></li>
+					<li class="dis"><p>我在这,等你来</p></li>
+					<li class="dis">I Hope to meet as soon as possible.</li>
+				</ul>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<!-- 小想法-->
+	<div class="free wow bounce" data-wow-delay="0.1s">
+		<div class="container">
+			<div class="free-main">
+				<p>
+					<sup><img src="images/quote-1.png" alt=""></sup>
+					我相信有一份好奇，加上一点点努力，我们一定能从“一无所知”走向“知道一点点”，然后是“知道一些”，这样慢慢地积累，
+					说不定有一天突然发现，原来我也可以站在巨人的肩膀上，原来我真的已经站在巨人的肩膀上。
+					到那时，我们一定已经开始新的旅程了，那将是真正具备创造性的工作，到那一天，请不要忘记，一切都是从好奇开始。
+					<sub><img src="images/quote-2.png" alt=""></sub> 
+				</p>
+			</div>
+		</div>
+	</div>
+	<!-- 项目展示区域-->
+	<div class="portfolio entertain_box  wow fadeInUp" data-wow-delay="0.4s" id="portfolio">
+		<div class="container">
+			<div class="portfolio-top">
+				<ul id="filters">
+					<li><span class="filter active" data-filter="app card icon logo web">HTML CSS</span></li>
+					<li><span class="filter" data-filter="app">JavaScript</span></li>
+					<li><span class="filter" data-filter="photo">AngularJS</span></li>
+					<li><span class="filter" data-filter="card">Ionic</span></li>
+				</ul>
+			</div>
+			<div class="html" id="html">
+				<ul>
+					<li class="html1 on">
+						<div class="project">
+							<a href="./myApple/macbook.html" target="_blank">
+								<div class="des_html1">
+									<h4>apple 中国</h4>
+									<p class="des">html, css, css3动画</p>
+								</div>
+							</a>
+						</div>
+					</li>
+					<li class="html2 on">
+						<div class="project">
+							<a href="./博雅互动/index.html" target="_blank">
+								<div class="des_html1">
+									<h4>博雅互动</h4>
+									<p class="des">html css</p>
+								</div>
+							</a>
+						</div>
+					</li>
+					<li class="html3 on">
+						<div class="project">
+							<a href="./IndexedDB/IndexedDB.html" target="_blank">
+								<div class="des_html1">
+									<h4>H5 IndexedDB</h4>
+									<p class="des">H5的IndexedDB实现数据的存储</p>
+								</div>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="html" id="js">
+				<ul>
+					<li class="js1 on">
+						<div class="project">
+							<a href="./myApple/macbook.html" target="_blank">
+								<div class="des_html1">
+									<h4>apple 中国</h4>
+									<p class="des">原生js特效, 利用某度api, 跨域请求数据, 返回json数据并解析</p>
+								</div>
+							</a>
+						</div>
+					</li>
+					<li class="js2 on">
+						<div class="project">
+							<a href="./login/index.html" target="_blank">
+								<div class="des_html1">
+									<h4>模态框拖拽</h4>
+									<p class="des">原生js封装事件, 实现模态框的拖拽</p>
+								</div>
+							</a>
+						</div>
+					</li>
+					<li class="js3 on">
+						<div class="project">
+							<a href="https://github.com/panyon/library" target="_blank">
+								<div class="des_html1">
+									<h4>图书管理系统</h4>
+									<p class="des">基于wampserver, 使用PHP, Mysql开发的图书管理系统</p>
+								</div>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="html" id="angularjs">
+				<ul>
+					<li class="angularjs1 on">
+						<div class="project">
+							<a href="./Douban/index.html" target="_blank">
+								<div class="des_html1">
+									<h4>豆瓣电影</h4>
+									<p class="des">angularJS bootstrap框架, MVC架构模式, 利用API获取数据</p>
+								</div>
+							</a>
+						</div>
+					</li>
+					<li class="angularjs2 on">
+						<div class="project">
+							<a href="javascript:;">
+								<div class="des_html1">
+									<h4>微信订阅号</h4>
+									<p class="des">开发中...</p>
+								</div>
+							</a>
+						</div>
+					</li>
+					<li class="angularjs3 on">
+						<div class="project">
+							<a href="javascript:;">
+								<div class="des_html1">
+									<h4>更新中</h4>
+									<p class="des">loading...</p>
+								</div>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="html" id="ionic">
+				<ul>
+					<li class="ionic1 on">
+						<div class="project">
+							<a href="https://github.com/panyon/App/" target="_blank">
+								<div class="des_html1" target="_blank">
+									<h4>移动App</h4>
+									<p class="des">使用Ionic开发框架制作手机App, 适配多个移动端</p>
+								</div>
+							</a>
+						</div>
+					</li>
+					<li class="ionic2 on">
+						<div class="project">
+							<a href="./webApp/index.html" target="_blank">
+								<div class="des_html1">
+									<h4>WebApp</h4>
+									<p class="des">媒体查询适配移动端, HTML实现结构, css3动画实现轮播图</p>
+								</div>
+							</a>
+						</div>
+					</li>
+					<li class="ionic3 on">
+						<div class="project">
+							<a href="javascript:;">
+								<div class="des_html1">
+									<h4>更新中</h4>
+									<p class="des">loading...</p>
+								</div>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+	<!--Blog-Starts-Here-->
+	<div class="blog" id="contact">
+		<div class="container">
+			<div class="blog-main">
+				<div class="col-md-4 blog-left">
+					<div class="blog-one wow bounceInLeft" data-wow-delay="0.4s">
+						<img src="images/blog-4.jpg" alt=""/>
+						<h3>个人简历</h3>
+						<p><a href="resume.html" target="_blank">点击查看</a></p>
+					</div>
+				</div>
+				<div class="col-md-4 blog-left">
+					<div class="blog-one wow bounce" data-wow-delay="0.1s">
+						<img src="images/blog-2.png" alt=""/>
+						<h3>常用网站收录</h3>
+						<p><a href="bookmark.html" target="_blank">点击查看</a></p>
+					</div>
+				</div>
+				<div class="col-md-4 blog-left">
+					<div class="blog-one wow bounceInRight" data-wow-delay="0.4s">
+						<img src="images/blog-3.png" alt=""/>
+						<h3>其他</h3>
+						<p><a href="javascript:;">宝宝努力建设中</a></p>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<!-- 联系我-->
+	<div class="contact">
+		<div class="container">
+			<div class="contact-main">
+				<div class="col-md-6 contact-left wow bounceInLeft" data-wow-delay="0.4s">
+					<h3>About Me</h3>
+					<p>
+						喜欢泡IT论坛、阅读,关注前端技术大牛博客、公众号并善于从中学习;乐观开朗有上进心，能承受一定的工作压力；追求完美，有极客精神；
+						对Web前端开发有热情，能从中能获得成就感，勤于思考，善于总结；喜欢接触新的事物，学习就是遇到问题到解决问题的过程。
+					</p>
+					<ul>
+						<li><p>T: 130 - 2771- 2003</p></li>
+						<li><p><a href="mailto:example@email.com"> E: qtangvip@126.com </a></p></li>
+					</ul>
+				</div>
+				<div class="col-md-6 contact-left wow bounceInRight" data-wow-delay="0.4s">
+					<form  action="" method="">
+						<input type="text" value="你的名字" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '你的名字';}"/>
+						<input type="text" value="你的邮件地址" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '你的邮件地址';}"/>
+						<div class="contact-textarea">
+							<textarea value="你的留言..." onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '你的留言...';}">你的留言...</textarea>
+						</div>
+						<div class="contact-but">
+							<input type="submit" value="提交" class="active" />
+						</div>
+					</form>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<!-- 底部样式设置开始-->
+	<div class="footer">
+		<div class="conatiner">
+			<div class="footer-text wow bounce" data-wow-delay="0.1s">
+				<p>Copyright &copy; 2016.Company T Tel: 130 - 2771 - 2003</p>
+				<ul>
+					<li><a href="#"><span class="twt"> </span></a></li>
+					<li><a href="#"><span class="t"> </span></a></li>
+					<li><a href="#"><span class="g"> </span></a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- 返回顶部-->
+		<a href="#home" id="toTop" class="scroll" style="display: block;">
+			<span id="toTopHover" style="opacity: 1;"> </span>
+		</a>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$().UItoTop({ easingType: 'easeOutQuart' });
+
+		});
+	</script>
+</body>
+</html>
