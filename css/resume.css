@@ -1,0 +1,89 @@
+@charset "utf-8";
+html,body{
+    font-size: 62.5%;
+}
+.resume{
+    width: 80%;
+    margin: 0 auto;
+}
+.base{
+    width: 30%;
+    color: white;
+    background-color: rgba(30, 17, 23, 0.93);
+    padding: 20px;
+}
+.base  h3{
+    color: #ff7c23;
+}
+.base .name{
+    text-align: center;
+}
+.base .name h3{
+    color: white;
+    padding-bottom: 10px;
+    border-bottom: 1px solid white;
+}
+.base .message{
+    margin-top: 10px;
+}
+.base .message ul{
+    padding-left: 80px;
+}
+.base .message li{
+    line-height: 30px;
+}
+.base .good h3{
+    padding-bottom: 10px;
+}
+.base .good ul li .progress{
+    width: 70%;
+    margin-left: 10px;
+}
+.base .github{
+    margin-top: 10px;
+}
+.base .github p a{
+    color: white;
+}
+.particular{
+    width: 70%;
+    color: black;
+    background-color: rgba(238, 229, 120, 0.27);
+    padding: 20px;
+}
+.particular h3{
+    background-color: rgba(30, 17, 23, 0.93);
+    border-radius: 6px;
+    color: white;
+    line-height: 40px;
+    padding-left: 4px;
+}
+.particular ul li{
+    line-height: 30px;
+}
+.particular .say ul li{
+    padding-left: 60px;
+}
+.particular .pic{
+    width: 16%;
+    margin-left: 20%;
+    border-radius: 100%;
+    box-shadow: blue 0 0 5px;
+    text-align: center;
+    line-height: 700%;
+    background-color: white;
+}
+.skill{
+
+}
+.skill ul li{
+    list-style-type: disc;
+    margin-left: 30px;
+}
+.experience ul li{
+    list-style-type: disc;
+    margin-left: 30px;
+}
+.particular .want ul li{
+    margin-left: 30px;
+}

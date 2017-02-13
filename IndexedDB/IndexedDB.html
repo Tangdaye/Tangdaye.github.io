@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            text-align: center;
+            margin-right: 20px ;
+            border: 1px solid gray;
+            border-radius: 4px;
+            background-color: rgba(204, 204, 204, 0.3);
+            float: left;
+        }
+        div input{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!--增加数据-->
+    <div class="add" id="add">
+        <p>添加数据</p>
+        <form>
+            <br/>
+            <span>id: </span><input type="text" id="txtid" placeholder="请输入四位数,如1000...">
+            <br/>
+            <span>姓名:</span><input type="text" id="txtname" placeholder="请输入姓名...">
+            <br/>
+            <span>年龄:</span><input type="text" id="txtage" placeholder="请输入年龄...">
+            <br/>
+            <span>性别:</span><input type="text" id="txtsex" placeholder="请输入性别...">
+            <br/>
+            <input type="reset" value="重置"/>
+            <input type="button" value="增加" onclick="join()" title="确认无误提交!"/>
+        </form>
+    </div>
+    <!--查询数据-->
+    <div class="inquire" id="inquire">
+        <p>查询数据</p>
+        <form>
+            <span>查询方式:</span><input type="radio" name="choose">ID查询<input type="radio" name="choose">姓名查询
+            <br/>
+            <span>id: </span><input type="text">
+            <br/>
+            <span>姓名:</span><input type="text">
+            <br/>
+            <span>年龄:</span><input type="text">
+            <br/>
+            <span>性别:</span><input type="text">
+            <br/>
+            <input type="reset" value="重置"/>
+            <input type="button" value="查询" onclick="search()">
+        </form>
+    </div>
+    <!--删除数据-->
+    <div id="delete">
+        <p>移除数据</p>
+        <span>移除方式:</span><input type="radio" name="choose">ID<input type="radio" name="choose">姓名
+        <br/>
+        <span>id: </span><input type="text">
+        <br/>
+        <span>姓名:</span><input type="text">
+        <br/>
+        <span>结果:</span><input type="text">
+        <br/>
+        <input type="reset" value="重置"/>
+        <input type="button" value="删除" onclick="deLete()">
+    </div>
+    <!-- 更新数据-->
+    <div id="updata">
+        <p>更新数据</p>
+    </div>
+
+    <script>
+        //创建数据库
+        var myDB = {
+            version: 1,
+            name: 'student',
+            db: null
+        };
+
+        function createDB(name, version) {
+            var request = indexedDB.open(name, version);
+            //数据库打开成功
+            request.onsuccess = function () {
+                myDB.db = this.result;
+            };
+            //数据库打开失败
+            request.onerror = function () {
+                alert('打开失败!');
+            };
+            //数据库版本升级
+            request.onupgradeneeded = function (e) {
+                myDB.db = e.target.result;
+                //创建数据库表名字
+                var store = myDB.db.createObjectStore('students',{keyPath:'id'});
+                //创建数据库索引
+                store.createIndex('nameIndex', 'name',{unique:true});
+                store.createIndex('idIndex', 'id',{unique:true});
+            }
+        }
+        createDB(myDB.name, myDB.version);
+
+        var txt = document.getElementById('add');
+        var txtid = document.getElementById('txtid');
+        var txtname = document.getElementById('txtname');
+        var txtage = document.getElementById('txtage');
+        var txtsex = document.getElementById('txtsex');
+
+        var mesid = null,mesname = null,mesage = null,messex = null;
+        function join () {
+            mesid = Number(txtid.value);
+            mesname = txtname.value;
+            mesage = Number(txtage.value);
+            messex = txtsex.value;
+
+            person();
+
+            var i = 0;
+            setTimeout(function () {
+                i++;
+                person();
+                console.log(stu);
+                addStudent(stu);
+            },100);
+        }
+
+        function person() {
+            stu = {
+                id: mesid,
+                name: mesname,
+                age: mesage,
+                sex: messex
+            }
+        }
+
+        //添加数据到表中
+        function addStudent (stu) {
+            var trans = myDB.db.transaction('students','readwrite');
+            var store = trans.objectStore('students');
+            store.add(stu);
+        }
+
+        //查询数据
+        var input = document.getElementById('inquire').getElementsByTagName('input');
+        //获取选择项
+        var changId = input[0];
+        var changeName = input[1];
+        //获取各查询输入框
+        var queryId = input[2];
+        var queryName = input[3];
+        var queryAge = input[4];
+        var querySex = input[5];
+        var reset = input[6];
+
+        function search () {
+            Id =   Number(queryId.value);
+            Name = queryName.value;
+
+            setTimeout(cursorSer, 100);
+        }
+
+        changId.setAttribute('checked', 'ckecked');
+        queryName.setAttribute('disabled', 'disabled');
+        //选择ID查询时, 禁用姓名输入
+        changId.onclick = function () {
+            queryName.setAttribute('disabled', 'disabled');
+            queryId.removeAttribute('disabled', 'disabled');
+        };
+        //选择name查询时, 禁用id输入
+        changeName.onclick = function () {
+            queryId.setAttribute('disabled', 'disabled');
+            queryName.removeAttribute('disabled', 'disabled');
+        };
+
+        function cursorSer () {
+            var trans = myDB.db.transaction('students','readwrite');
+            var store = trans.objectStore('students');
+
+            //开启游标
+            var request = store.openCursor();
+            request.onsuccess = function (e) {
+                //获得游标
+                var cursor = e.target.result;
+                if (cursor) {
+                    if (cursor.value.id == Id || cursor.value.name == Name) {
+                        queryId.value = cursor.value.id;
+                        queryName.value = cursor.value.name;
+                        queryAge.value = cursor.value.age;
+                        querySex.value = cursor.value.sex;
+                    }
+                    cursor.continue();
+                }
+            }
+        }
+
+        //删除数据
+        var del = document.getElementById('delete').getElementsByTagName('input');
+        var chooseId = del[0];
+        var chooseName = del[1];
+
+        var delId = del[2];
+        var delName = del[3];
+        var reSult = del[4];
+
+        chooseId.setAttribute('checked','checked');
+        delName.setAttribute('disabled','disabled');
+
+        chooseName.onclick = function () {
+            delId.setAttribute('disabled','disabled');
+            delName.removeAttribute('disabled','disabled');
+        };
+        chooseId.onclick = function () {
+            delId.removeAttribute('disabled','disabled');
+            delName.setAttribute('disabled','disabled');
+        };
+
+        var inputId = null,inputName = null;
+        function deLete() {
+            inputId = Number(delId.value);
+            inputName = delName.value;
+
+            if (delId.value == '') {
+                reSult.value = '删除失败';
+            } else {
+                reSult.value = '删除成功';
+            }
+            setTimeout(deleteData, 2000);
+        }
+
+        //根据key值删除
+        function deleteData() {
+            var trans = myDB.db.transaction('students','readwrite');
+            var store = trans.objectStore('students');
+            store.delete(inputId);
+        }
+        //删除表
+//         indexedDB.deleteDatabase('student');
+    </script>
+</body>
+</html>

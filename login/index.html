@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>第34章 项目1-博客前端：下拉菜单</title>
+<script type="text/javascript" src="js/tool.js"></script>
+<script type="text/javascript" src="js/base.js"></script>
+<script type="text/javascript" src="js/base_drag.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<link rel="stylesheet" type="text/css" href="index.css" />
+</head>
+<body>
+
+<div id="header">
+	<div class="reg">注册</div>
+	<div class="login">登录</div>
+</div>
+
+<div id="reg">
+	<h2><img src="images/close.png" alt="" class="close" />会员注册</h2>
+	<dl>
+		<dd>用 户 名： <input type="text" name="user" class="text" /></dd>
+		<dd>密　　码： <input type="password" name="pass" class="text" /></dd>
+		<dd>密码确认： <input type="password" name="notpass" class="text" /></dd>
+		<dd><span style="vertical-align:-2px">提　　问：</span> <select name="ques">
+									<option value="0">- - - - 请选择 - - - -</option>
+									<option value="1">- - 您最喜欢吃的菜</option>
+									<option value="2">- - 您的狗狗的名字</option>
+									<option value="3">- - 您的出生地</option>
+									<option value="4">- - 您最喜欢的明星</option>
+								  </select></dd>
+		<dd>回　　答： <input type="text" name="ans" class="text" /></dd>
+		<dd>电子邮件： <input type="text" name="email" class="text" /></dd>
+		<dd class="birthday"><span style="vertical-align:-2px">生　　日：</span> <select name="year">
+									<option value="0">- 请选择 -</option>
+								  </select> 年
+								  <select name="month">
+									<option value="0">- 请选择 -</option>
+								  </select> 月
+								  <select name="day">
+									<option value="0">- 请选择 -</option>
+								  </select> 日</dd>
+		<dd style="height:105px;"><span style="vertical-align:85px">备　　注：</span> <textarea name="ps"></textarea></dd>			
+		<dd style="padding:0 0 0 320px;">还可以输入200字</dd>		
+		<dd style="padding:0 0 0 80px;"><input type="button" class="submit" /></dd>
+	</dl>
+</div>
+
+<div id="login">
+	<h2><img src="images/close.png" alt="" class="close" />网站登录</h2>
+	<div class="user">帐 号：<input type="text" name="user" class="text" /></div>
+	<div class="pass">密 码：<input type="password" name="pass" class="text" /></div>
+	<div class="button"><input type="button" class="submit" value="" /></div>
+	<div class="other">注册新用户 | 忘记密码？</div>
+</div>
+
+
+</body>
+</html>
